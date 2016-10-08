@@ -36,4 +36,8 @@ main = hspec $ do
       doubleEveryOther [1] `shouldBe` [1]
 
     it "should return [1 4 3 8] for [1 2 3 4]" $ do
-      doubleEveryOther [1, 2, 3, 4] `areEqual` [1, 4, 3, 8]
+      doubleEveryOther [1, 2, 3, 4] `shouldBe` [1, 4, 3, 8]
+
+    it "should return [1 4 3] for [1 2 3]" $ do
+      doubleEveryOther [1, 2, 3] `shouldBe` [1, 4, 3]
+
