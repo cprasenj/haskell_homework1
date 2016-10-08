@@ -14,3 +14,13 @@ main = hspec $ do
 
     it "should return [1 2 3] for 123" $ do
       toDigits (123) `shouldBe` [1, 2, 3]
+
+  describe "toDigitsRev" $ do
+    it "should return [] for 0" $ do
+      toDigitsRev 0  `shouldBe` []
+
+    it "should return [] for -1" $ do
+      toDigitsRev (-1) `shouldBe` []
+
+    it "should return [3 2 1] for 123" $ do
+      toDigitsRev (123) `shouldBe` [3, 2, 1]
