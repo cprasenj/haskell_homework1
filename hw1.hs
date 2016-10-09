@@ -27,3 +27,12 @@ toDigitsRev num = reverse . toDigits $ num
 
 doubleEveryOther :: [Integer] -> [Integer]
 doubleEveryOther list = map (uncurry ($))(zip (cycle [((*) 1), ((*) 2)]) list)
+
+-- Pooja's idiot concat thing
+-- doubleEveryOther :: [Integer] -> [Integer]
+-- doubleEveryOther list
+--   | list == [] = []
+--   | length list == 1 = list
+--   | length list <= 2 = (head list) : [2 * (list !! 1)]
+--   | otherwise = (doubleEveryOther (take 2 list)) ++ (doubleEveryOther (drop 2 list))
+
