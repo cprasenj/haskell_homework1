@@ -19,7 +19,7 @@ toDigitsRev num = reverse . toDigits $ num
 ----------------------------------------------------------------------------------
 
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther list = map (\ pair -> (fst pair) (snd pair)) (zip (cycle [((*) 1), ((*) 2)]) list)
+doubleEveryOther list = map (\ pair -> fst pair $ snd pair) (zip (cycle [(*) 1, (*) 2]) list)
 
 -- Pooja and Prasenjit's idiot concat thing
 -- doubleEveryOther :: [Integer] -> [Integer]
