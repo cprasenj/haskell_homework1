@@ -38,7 +38,7 @@ main = hspec $ do
 
     it "should give 1 for [1] and 0" $ do
       nth [1] 0 `shouldBe` 1
-        
+
   describe "doubleEveryOther" $ do
 
     it "should return [] for []" $ do
@@ -52,3 +52,14 @@ main = hspec $ do
 
     it "should return [1 4 3] for [1 2 3]" $ do
       doubleEveryOther [1, 2, 3] `shouldBe` [1, 4, 3]
+
+  describe "sumDigits" $ do
+
+    it "should return 15 for [1 2 3 4 5]" $ do
+      sumDigits [1, 2, 3, 4, 5] `shouldBe` 15
+
+    it "should return 20 for [1 4 3 16 5]" $ do
+      sumDigits [1, 4, 3, 16, 5] `shouldBe` 20
+
+    it "should return 0 for []" $ do
+      sumDigits [] `shouldBe` 0
