@@ -31,14 +31,6 @@ main = hspec $ do
     it "should return [3 2 1] for 123" $ do
       toDigitsRev (123) `shouldBe` [3, 2, 1]
 
-  describe "nth" $ do
-
-    it "shoud giev error for [] and 2" $ do
-      nth [] 2 `shouldThrow` anyException
-
-    it "should give 1 for [1] and 0" $ do
-      nth [1] 0 `shouldBe` 1
-
   describe "doubleEveryOther" $ do
 
     it "should return [] for []" $ do
