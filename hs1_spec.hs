@@ -8,7 +8,9 @@ areEqual a b = sort a == sort b
 
 main :: IO ()
 main = hspec $ do
+
   describe "toDigits" $ do
+
     it "should return [] for 0" $ do
       toDigits 0  `shouldBe` []
 
@@ -19,6 +21,7 @@ main = hspec $ do
       toDigits (123) `shouldBe` [1, 2, 3]
 
   describe "toDigitsRev" $ do
+
     it "should return [] for 0" $ do
       toDigitsRev 0  `shouldBe` []
 
@@ -28,7 +31,16 @@ main = hspec $ do
     it "should return [3 2 1] for 123" $ do
       toDigitsRev (123) `shouldBe` [3, 2, 1]
 
+  describe "nth" $ do
+
+    it "shoud giev error for [] and 2" $ do
+      nth [] 2 `shouldThrow` anyException
+
+    it "should give 1 for [1] and 0" $ do
+      nth [1] 0 `shouldBe` 1
+        
   describe "doubleEveryOther" $ do
+
     it "should return [] for []" $ do
       doubleEveryOther []  `shouldBe` []
 
@@ -40,4 +52,3 @@ main = hspec $ do
 
     it "should return [1 4 3] for [1 2 3]" $ do
       doubleEveryOther [1, 2, 3] `shouldBe` [1, 4, 3]
-

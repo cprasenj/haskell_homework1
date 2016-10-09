@@ -6,7 +6,11 @@ toDigits :: Integer -> [Integer]
 toDigits num
   | num < 1 = []
   | otherwise = toDigits (quot num 10) ++ [rem num 10]
-
+----------------------------------------------------------------------------------
+nth :: [a] -> Int -> a
+nth list index
+  | length list < pred index = error "index out of bound"
+  | otherwise = head . drop(index) $ list
 ----------------------------------------------------------------------------------
 toDigitsRev :: Integer -> [Integer]
 toDigitsRev num = reverse $ toDigits num
@@ -19,4 +23,4 @@ doubleEveryOther list = doubleEveryOther' [] list
     doubleEveryOther' resultSoFar list
       | length list == 0 = reverse resultSoFar
       | length list < 2 =  reverse $ head list : resultSoFar
-      | otherwise = doubleEveryOther' (((list !! 1) * 2) : (head list) : resultSoFar) (drop 2 list)
+      | otherwise = doubleEveryOther' (((*) 2 $ nth list 1) : (head list) : resultSoFar) (drop 2 list)
