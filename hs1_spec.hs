@@ -69,4 +69,9 @@ main = hspec $ do
       validate 4012888888881881 `shouldBe` True
 
     it "should give true for  4012888888881882" $ do
-      validate 4012888888881882 `shouldBe` False   
+      validate 4012888888881882 `shouldBe` False
+
+  describe "hanoi" $ do
+
+    it "should give [(a, c), (a, b), (c, b)] for 2, a, b, c" $ do
+      hanoi 2 "a" "b" "c" `shouldBe` [("a", "c"), ("a", "b"), ("c", "b")]
