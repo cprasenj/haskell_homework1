@@ -17,10 +17,4 @@ toDigitsRev num = reverse $ toDigits num
 ----------------------------------------------------------------------------------
 
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther list = doubleEveryOther' [] list
-  where
-    doubleEveryOther' :: [Integer] -> [Integer] -> [Integer]
-    doubleEveryOther' resultSoFar list
-      | length list == 0 = reverse resultSoFar
-      | length list < 2 =  reverse $ head list : resultSoFar
-      | otherwise = doubleEveryOther' (((*) 2 $ nth list 1) : (head list) : resultSoFar) (drop 2 list)
+doubleEveryOther list = map (uncurry ($))(zip (cycle [((*) 1), ((*) 2)]) list)
