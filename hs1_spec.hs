@@ -63,3 +63,10 @@ main = hspec $ do
 
     it "should return 0 for []" $ do
       sumDigits [] `shouldBe` 0
+  describe "validate" $ do
+
+    it "should give true for  4012888888881881" $ do
+      validate 4012888888881881 `shouldBe` True
+
+    it "should give true for  4012888888881882" $ do
+      validate 4012888888881882 `shouldBe` False   

@@ -31,6 +31,7 @@ doubleEveryOther list = map (\ pair -> fst pair $ snd pair) (zip (cycle [(*) 1, 
 ---------------------------------------------------------------------------------
 
 sumDigits :: [Integer] -> Integer
-sumDigits listOfNumbers = foldl (\result num -> (+) result $ foldl (+) 0 (toDigits num)) 0 listOfNumbers
+sumDigits listOfNumbers = foldl (\result num -> (+) result $ sum $ toDigits num) 0 listOfNumbers
 
-
+validate :: Integer -> Bool
+validate creditCardNumber = (== 0) . flip rem 10 . sumDigits . doubleEveryOther . toDigitsRev $ creditCardNumber
