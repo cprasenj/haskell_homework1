@@ -13,7 +13,7 @@ nth list index
   | otherwise = head . drop(index) $ list
 ----------------------------------------------------------------------------------
 toDigitsRev :: Integer -> [Integer]
-toDigitsRev num = reverse $ toDigits num
+toDigitsRev num = reverse . toDigits $ num
 ----------------------------------------------------------------------------------
 -- explanation
 -- cycle creates an infinite loop so (cycle [((*) 1), ((*) 2)]) will create an infinite list
