@@ -31,4 +31,6 @@ doubleEveryOther list = map (\ pair -> fst pair $ snd pair) (zip (cycle [(*) 1, 
 ---------------------------------------------------------------------------------
 
 sumDigits :: [Integer] -> Integer
-sumDigits listOfNumbers = foldl (\x y -> (+) x $ foldl (+) 0 (toDigits y)) 0 listOfNumbers
+sumDigits listOfNumbers = foldl (\result num -> (+) result $ foldl (+) 0 (toDigits num)) 0 listOfNumbers
+
+
