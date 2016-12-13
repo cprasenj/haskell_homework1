@@ -1,3 +1,5 @@
 language: haskell
 ghc: 7.8
-script: runhaskell hs1_spec.hs
+script: 
+  -cabal update && cabal install hspec
+  - runhaskell hs1_spec.hs
