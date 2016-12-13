@@ -1,4 +1,3 @@
 language: haskell
 ghc: 7.8
-script:
-  - runhaskell hw1_spec.hs
+script: runhaskell hw1_spec.hs
